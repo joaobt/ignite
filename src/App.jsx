@@ -1,13 +1,15 @@
 import { Header } from "./components/Header";
-import { Post } from "./Post";
+import { Post } from './components/Post';
+import { SiderBar } from "./components/SiderBar";
+
 import styles from './App.module.css';
 import './global.css'
-import { SiderBar } from "./components/SiderBar";
 
 export function App() {
   return (
     <div>
       <Header />
+
       <div className={styles.wrapper}>
         <SiderBar/>
         <main>
@@ -21,10 +23,10 @@ export function App() {
           />
         </main>
       </div>
-
-
-
-
     </div>
   );
 }
+
+
+
+
