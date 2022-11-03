@@ -60,4 +60,11 @@
   justify-content: center;
 
   gap: 0.3rem;
+
+  transition: color 0.1s, background-color 0.1s;
+}
+
+.SiderBar footer a:hover {
+    background: var(--green-501);
+    color: var(--white);
 }
