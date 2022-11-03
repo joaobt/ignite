@@ -1,4 +1,5 @@
 import styles from "./SiderBar.module.css";
+import { PencilLine } from "phosphor-react";
 
 export function SiderBar() {
   return (
@@ -9,12 +10,19 @@ export function SiderBar() {
       />
 
       <div className={styles.profile}>
+        <img
+          className={styles.avatar}
+          src="https://avatars.githubusercontent.com/u/94937544?v=4"
+        />
         <strong>JB Paula filho </strong>
         <span>Web Developer</span>
       </div>
 
       <footer>
-        <a href="#">Editar Seu Perfil</a>
+        <a href="#">
+          <PencilLine size={20} />
+          Editar Seu Perfil
+        </a>
       </footer>
     </aside>
   );
