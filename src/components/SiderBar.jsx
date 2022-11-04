@@ -14,7 +14,7 @@ export function SiderBar() {
           className={styles.avatar}
           src="https://avatars.githubusercontent.com/u/94937544?v=4"
         />
-        <strong>JB Paula filho </strong>
+        <strong>JB Paula filho</strong>
         <span>Web Developer</span>
       </div>
 
