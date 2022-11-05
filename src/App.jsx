@@ -9,6 +9,7 @@ export function App() {
   return (
     <div>
       <Header />
+      
 
       <div className={styles.wrapper}>
         <SiderBar/>
@@ -22,6 +23,7 @@ export function App() {
             content="Miriam Silva "
           />
         </main>
+        
       </div>
     </div>
   );
