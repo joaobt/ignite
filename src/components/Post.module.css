@@ -36,6 +36,7 @@
 .Post > header time {
   font-size: 0.875rem;
   color: var(--gray-400);
+
 }
 .author {
   display: flex;
@@ -53,6 +54,7 @@
   font-size: 0.875;
   color: var(--gray-400);
   line-height: 1.6;
+  
 }
 
 .author img {
@@ -103,8 +105,8 @@
   margin-top: 1rem;
   border-radius: 8px;
   border: 0;
-  background: var(--green-500);
-  color: var(--white);
+  background: var(--green-501);
+  color: var(--gray-500);
   font-weight: bold;
   cursor: pointer;
 
