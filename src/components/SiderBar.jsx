@@ -11,7 +11,7 @@ export function SiderBar() {
       />
 
       <div className={styles.profile}>
-        <Avatar src='https://avatars.githubusercontent.com/Iago' />
+        <Avatar  src='https://avatars.githubusercontent.com/Iago' />
         <strong>JB Paula filho</strong>
         <span>Web Developer</span>
       </div>
