@@ -4,22 +4,33 @@ import styles from "./Post.module.css";
 
 
 
-export function Post(props) {
+export function Post({ author, publishedAt }) {
 
-  console.log(props);
+  const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR', {
+    day:'2-digit',
+    month: 'long',
+    hour:'2-digit',
+    minute:'2-digit'
+
+  }).format(publishedAt)
+
+
 
   return (
     <article className={styles.Post}>
       <header>
         <div className={styles.author}>
-          <Avatar src="https://avatars.githubusercontent.com/maykbrito" />
+
+            <Avatar src={author.AvatarUrl} />
           <div className={styles.authorInfo}>
-            <strong>Maria Eduarda</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
-        <time title="11 de Novembro ás 20:41" dateTime="2022-10-20:54:20">Publicado a 1h</time>
+        <time title="11 de Novembro ás 20:41" dateTime="2022-10-20:54:20">
+        {publishedDateFormatted}
+        </time>
 
 
       </header>

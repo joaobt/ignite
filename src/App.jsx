@@ -15,14 +15,14 @@ const Posts = [
   {
     id: 1,
     author: {
-      Avatar: "https://avatars.githubusercontent.com/u/6692103?v=4",
-      name: "Iago carvalho",
+      AvatarUrl: "https://github.com/joaobt.png",
+      name: "João B",
       role: "Dev web",
     },
     content: [
       { type: 'paragraph', content: 'Fala galeraa 👋'},
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa.É um projeto que fiz no NLW Return, evento da Rocketseat.O nome do projeto é DoctorCare 🚀'},
-      { type: 'Link', content: 'jane.design/doctorcare'}
+      { type: 'Line', content: 'jane.design/doctorcare'}
     ],
     publishedAt: new Date('2022-07-11 08:21:02')
    },
@@ -30,14 +30,14 @@ const Posts = [
    {
     id: 2,
     author: {
-      Avatar: "https://avatars.githubusercontent.com/maykbrito",
+      AvatarUrl: "https://github.com/maykbrito.png",
       name: "maykbrito",
       role: "Dev1 web",
     },
     content: [
       { type: 'paragraph', content: 'Fala galeraa 👋'},
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa.É um projeto que fiz no NLW Return, evento da Rocketseat.O nome do projeto é DoctorCare 🚀'},
-      { type: 'Link', content: 'jane.design/doctorcare'}
+      { type: 'Line', content: 'jane.design/doctorcare'}
     ],
     publishedAt: new Date('2022-07-09 08:21:02')
    },
