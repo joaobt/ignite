@@ -1,18 +1,13 @@
 import { Avatar } from "./Avatar";
 import { Comment } from "./comment";
 import styles from "./Post.module.css";
+import moment from 'moment'
 
 
+export function Post({ author, publishedAt, content }) {
 
-export function Post({ author, publishedAt }) {
+  const publishedDateFormatted = moment().calendar();  
 
-  const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR', {
-    day:'2-digit',
-    month: 'long',
-    hour:'2-digit',
-    minute:'2-digit'
-
-  }).format(publishedAt)
 
 
 
@@ -35,7 +30,14 @@ export function Post({ author, publishedAt }) {
 
       </header>
       <div className={styles.content}>
-        <p>Fala galeraa 👋</p>
+        {content.map(line => {
+          if(line === 'paragraph') {
+            return <p>{line.content}</p>;
+
+          }else if(line.type === 'link') {
+            return <p><a href="#">{line.content}</a></p>;
+          }
+        })}
 
         <p>Acabei de subir mais um projeto no meu portifa.É um projeto que fiz no NLW Return, evento da Rocketseat.
           O nome do projeto é DoctorCare 🚀</p>
