@@ -2,21 +2,40 @@ import { Avatar } from "./Avatar";
 import { Comment } from "./comment";
 import styles from "./Post.module.css";
 import moment from 'moment'
+import { useState } from "react";
 
+
+
+//stado = varáveis que eu quero que o components monitire.
 
 export function Post({ author, publishedAt, content }) {
 
-  const publishedDateFormatted = moment().calendar();  
+  const [comments, setCommments] = useState([
 
+    'Post muito bacana, hein?!'
+  ])
 
+  const [newCommentText, setNewCommentText] = useState('')
 
+  const publishedDateFormatted = moment().calendar();
 
+  function handleCreateNewComment() {
+    event.preventDefault()
+    //imutabilidade  return o formulario
+
+    setCommments([...comments, newCommentText]);
+    setNewCommentText('')
+  }
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value);
+  }
   return (
     <article className={styles.Post}>
       <header>
         <div className={styles.author}>
 
-            <Avatar src={author.AvatarUrl} />
+          <Avatar src={author.AvatarUrl} />
           <div className={styles.authorInfo}>
             <strong>{author.name}</strong>
             <span>{author.role}</span>
@@ -24,17 +43,17 @@ export function Post({ author, publishedAt, content }) {
         </div>
 
         <time title="11 de Novembro ás 20:41" dateTime="2022-10-20:54:20">
-        {publishedDateFormatted}
+          {publishedDateFormatted}
         </time>
 
 
       </header>
       <div className={styles.content}>
         {content.map(line => {
-          if(line === 'paragraph') {
+          if (line === 'paragraph') {
             return <p>{line.content}</p>;
 
-          }else if(line.type === 'link') {
+          } else if (line.type === 'link') {
             return <p><a href="#">{line.content}</a></p>;
           }
         })}
@@ -54,25 +73,42 @@ export function Post({ author, publishedAt, content }) {
         </p>
       </div>
 
-      <form className={styles.commentForm}>
+
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe Seu feedback</strong>
 
         <textarea
-         placeholder="Deixe um Comentário"
+          name="comment"
+          placeholder="Deixe um Comentário"
+          value={newCommentText}
+          onChange={handleNewCommentChange}
         />
         <footer>
           <button type="submit">Publicar</button>
         </footer>
-        
       </form>
 
+
       <div className={styles.commentList}>
-      <Comment />
-      <Comment />
-      <Comment />
+        {comments.map(comments => {
+          return <Comment content={comments} />
+        })}
       </div>
     </article>
   )
 }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
